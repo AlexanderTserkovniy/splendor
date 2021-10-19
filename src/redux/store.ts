@@ -1,9 +1,10 @@
-import { configureStore, combineReducers, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import startWizardReducer from '../components/StartWizard/redux/start-wizard-reducer';
 
 export const store = configureStore({
-  reducer: combineReducers({
-
-  }),
+  reducer: {
+    startWizardReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
