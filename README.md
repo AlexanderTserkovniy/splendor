@@ -1,7 +1,8 @@
-#Splendor board game
+# Splendor board game
 
 ![Splendor](https://boardgame.top/uploads/posts/2017-07/1501086956_splendor.jpg)
 
+This repo contains playable Splendor game, written in React+Redux+Redux-Observables
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
