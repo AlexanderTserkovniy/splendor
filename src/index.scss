@@ -1,6 +1,8 @@
 html, body, #root {
   height: 100vh;
   min-height: 100vh;
+
+  background-color: #282f42;
 }
 
 body {
@@ -15,4 +17,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  color: white;
+
+  &:hover {
+    color: aliceblue;
+  }
+
+  &:active {
+    color: aqua;
+  }
 }

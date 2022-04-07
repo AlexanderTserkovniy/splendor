@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import styles from './StartWizard.module.css';
-import {useAppDispatch} from "../../redux/hooks";
+import {useAppDispatch, useAppSelector} from "../../redux/hooks";
 
 function StartWizard() {
   const dispatch = useAppDispatch();
+  const numberOfPlayers = useAppSelector(store => store.startWizardReducer.numberOfPlayers);
+  const setPlayersAmount = useCallback((numOfPlayers: Number) => () => {
+    dispatch({ type: 'startWizardReducer/numOfPlayers', payload: numOfPlayers });
+  }, [dispatch]);
 
   return (
     <div className={styles.App}>
@@ -12,21 +16,23 @@ function StartWizard() {
       </h2>
       <ul>
         <li>
-          <a href="#2" onClick={() => dispatch({ type: 'startWizardReducer/numOfPlayers', payload: 2 })}>
+          <button onClick={setPlayersAmount(2)}>
             2
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#3">
+          <button onClick={setPlayersAmount(3)}>
             3
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#4">
+          <button onClick={setPlayersAmount(4)}>
             4
-          </a>
+          </button>
         </li>
       </ul>
+
+      <h1>Players: { numberOfPlayers }</h1>
     </div>
   );
 }
