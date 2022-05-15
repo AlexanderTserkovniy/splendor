@@ -1,11 +1,11 @@
-import {AnyAction} from "redux";
+import {AnyAction, Reducer} from "redux";
 
 const INITIAL_STATE = {
   step: 0,
   numberOfPlayers: null,
 };
 
-const startWizardReducer = (state: any = INITIAL_STATE, action: AnyAction) => {
+const startWizardReducer: Reducer = (state: any = INITIAL_STATE, action: AnyAction) => {
   switch (action.type) {
     case 'startWizardReducer/numOfPlayers':
       return { ...state, numberOfPlayers: action.payload }

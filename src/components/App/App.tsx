@@ -1,5 +1,4 @@
-import React from 'react';
-import StartWizard from '../StartWizard/StartWizard';
+import React, { lazy, Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,13 +7,17 @@ import {
 
 import Layout from '../../layouts/MainLayout';
 
+const LazyStartWizard = lazy(() => import('../StartWizard/StartWizardInjected'));
+
 function App() {
   return (
     <Router>
       <Layout>
         <Switch>
           <Route path="/start">
-            <StartWizard/>
+            <Suspense fallback={'Loading...'}>
+              <LazyStartWizard />
+            </Suspense>
           </Route>
         </Switch>
       </Layout>

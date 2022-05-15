@@ -4,7 +4,8 @@ import {useAppDispatch, useAppSelector} from "../../redux/hooks";
 
 function StartWizard() {
   const dispatch = useAppDispatch();
-  const numberOfPlayers = useAppSelector(store => store.startWizardReducer.numberOfPlayers);
+  // @ts-ignore // TODO
+  const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers);
   const setPlayersAmount = useCallback((numOfPlayers: Number) => () => {
     dispatch({ type: 'startWizardReducer/numOfPlayers', payload: numOfPlayers });
   }, [dispatch]);
