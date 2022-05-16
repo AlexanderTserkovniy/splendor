@@ -1,16 +1,13 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styles from './StartWizard.module.css';
-import {useAppDispatch, useAppSelector} from "../../redux/hooks";
+import {SetPlayersAmount} from "./StartWizardInjected";
+import {StartWizardReducerStore} from "./redux/startWizard.reducer";
 
-function StartWizard() {
-  const dispatch = useAppDispatch();
-  // @ts-ignore // TODO
-  const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers);
-  const setPlayersAmount = useCallback((numOfPlayers: Number) => () => {
-    dispatch({ type: 'startWizardReducer/numOfPlayers', payload: numOfPlayers });
-  }, [dispatch]);
+type StartWizardParams = Pick<StartWizardReducerStore["startWizardReducer"], 'numberOfPlayers'> &
+  { setPlayersAmount: SetPlayersAmount };
 
-  return (
+const StartWizard = ({ setPlayersAmount = () => () => {}, numberOfPlayers } : StartWizardParams) =>
+  (
     <div className={styles.App}>
       <h2>
         How many players will play?
@@ -33,9 +30,8 @@ function StartWizard() {
         </li>
       </ul>
 
-      <h1>Players: { numberOfPlayers }</h1>
+      <h1>Players: {numberOfPlayers}</h1>
     </div>
   );
-}
 
 export default StartWizard;

@@ -15,3 +15,10 @@ const startWizardReducer: Reducer = (state: any = INITIAL_STATE, action: AnyActi
 };
 
 export default startWizardReducer;
+
+export type StartWizardReducerStore = {
+  startWizardReducer: {
+    step: Number;
+    numberOfPlayers: null | Number;
+  }
+}
