@@ -1,11 +1,11 @@
 import {ThunkAction, Action, configureStore, EnhancedStore} from '@reduxjs/toolkit';
 import {combineReducers, Dispatch, Reducer, ReducersMapObject} from "redux";
-import {StartWizardReducerStore} from "../components/StartWizard/redux/startWizard.reducer";
+import {StartWizardReducerStoreType} from "../components/StartWizard/redux/startWizard.reducer";
 
 type StoreWithAsyncReducersAndInject =
   EnhancedStore
   & { asyncReducers: ReducersMapObject, injectReducer: (k: string, ar: Reducer) => void }
-  & (StartWizardReducerStore | undefined);
+  & (StartWizardReducerStoreType | undefined);
 
 // Define the Reducers that will always be present in the application
 const staticReducers = {};

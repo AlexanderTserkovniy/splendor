@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './StartWizard.module.css';
-import {SetPlayersAmount} from "./StartWizardInjected";
-import {StartWizardReducerStore} from "./redux/startWizard.reducer";
+import {SetPlayersAmountType} from "./StartWizardInjected";
+import {StartWizardReducerStoreType} from "./redux/startWizard.reducer";
 
-type StartWizardParams = Pick<StartWizardReducerStore["startWizardReducer"], 'numberOfPlayers'> &
-  { setPlayersAmount: SetPlayersAmount };
+type StartWizardParams = Pick<StartWizardReducerStoreType["startWizardReducer"], 'numberOfPlayers'> &
+  { setPlayersAmount: SetPlayersAmountType };
 
 const StartWizard = ({ setPlayersAmount = () => () => {}, numberOfPlayers } : StartWizardParams) =>
   (

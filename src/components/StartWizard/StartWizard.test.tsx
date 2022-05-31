@@ -7,6 +7,7 @@ import StartWizard from './StartWizard';
 test('renders start wizard text', () => {
   const { getByText } = render(
     <Provider store={store}>
+      {/* @ts-ignore */}
       <StartWizard />
     </Provider>
   );

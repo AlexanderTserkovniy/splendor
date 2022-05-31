@@ -3,15 +3,21 @@ import store from "../../redux/store";
 import startWizardReducer from "./redux/startWizard.reducer";
 import StartWizard from "./StartWizard";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks";
+import {useNavigate} from "react-router-dom";
 
-export type SetPlayersAmount = (numOfPlayers: Number) => (e: React.MouseEvent) => void;
+export type SetPlayersAmountType = (numOfPlayers: Number) => (e: React.MouseEvent) => void;
 
 const StartWizardInjected = ({ ...props }) => {
   const dispatch = useAppDispatch();
   const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers);
-  const setPlayersAmount: SetPlayersAmount = useCallback((numOfPlayers: Number) => () => {
+  // TODO Move to custom hook
+  const navigate = useNavigate();
+  const goGame = useCallback(() => navigate("/game"), [navigate]);
+
+  const setPlayersAmount: SetPlayersAmountType = useCallback((numOfPlayers: Number) => () => {
     dispatch({ type: 'startWizardReducer/numOfPlayers', payload: numOfPlayers });
-  }, [dispatch]);
+    goGame();
+  }, [dispatch, goGame]);
 
   useEffect(() => {
     store.injectReducer('startWizardReducer', startWizardReducer);
