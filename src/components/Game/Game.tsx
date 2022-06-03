@@ -1,5 +1,4 @@
-import startingGameResourcesService, { ResourcesType } from "../../services/startingGameResources.service";
-import {useAppSelector} from "../../redux/hooks";
+import {ResourcesType} from "../../services/startingGameResources.service";
 
 const Game = ({ startingGameResources }: { startingGameResources: ResourcesType; }) => {
   return (
@@ -9,13 +8,4 @@ const Game = ({ startingGameResources }: { startingGameResources: ResourcesType;
   )
 };
 
-const GameInjected = () => {
-  const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers) as Number;
-  const startingGameResources = new startingGameResourcesService(numberOfPlayers);
-
-  return (
-    <Game startingGameResources={startingGameResources.get()} />
-  )
-};
-
-export default GameInjected;
+export default Game;

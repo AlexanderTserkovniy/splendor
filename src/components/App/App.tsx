@@ -8,7 +8,7 @@ import {
 import Layout from '../../layouts/MainLayout';
 
 const LazyStartWizard = lazy(() => import('../StartWizard/StartWizardInjected'));
-const LazyGame = lazy(() => import('../Game/Game'));
+const LazyGame = lazy(() => import('../Game/GameInjected'));
 
 function App() {
   return (
