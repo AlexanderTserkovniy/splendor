@@ -3,7 +3,7 @@ import startingGameResourcesService from "../../services/startingGameResources.s
 import Game from "./Game";
 
 const GameInjected = () => {
-  const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers) as Number;
+  const numberOfPlayers = useAppSelector(store => store.startWizardReducer?.numberOfPlayers) as number;
   const startingGameResources = new startingGameResourcesService(numberOfPlayers);
 
   return (

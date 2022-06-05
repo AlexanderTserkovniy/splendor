@@ -1,13 +1,8 @@
+import { TokensType } from '../components/Tokens/Tokens.types';
+
 export type ResourcesType = {
-  tokens: {
-    goldJokerTokens: Number;
-    emeraldTokens: Number;
-    diamondTokens: Number;
-    sapphireTokens: Number;
-    onyxTokens: Number;
-    rubyTokens: Number;
-  },
-  nobleTiles: Number;
+  tokens: TokensType;
+  nobleTiles: number;
 };
 
 type StartingGameResourcesType = {
@@ -53,10 +48,10 @@ const startingGameResources: StartingGameResourcesType = {
 };
 
 class startingGameResourcesService {
-  readonly #amountOfPlayers: Number;
+  readonly #amountOfPlayers: number;
   readonly #resources: ResourcesType;
 
-  constructor(amountOfPlayers: Number) {
+  constructor(amountOfPlayers: number) {
     this.#amountOfPlayers = amountOfPlayers;
 
     // calculate base resources

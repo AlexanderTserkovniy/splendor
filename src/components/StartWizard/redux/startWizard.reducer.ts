@@ -18,7 +18,7 @@ export default startWizardReducer;
 
 export type StartWizardReducerStoreType = {
   startWizardReducer: {
-    step: Number;
-    numberOfPlayers: null | Number;
+    step: number;
+    numberOfPlayers: null | number;
   }
 }
