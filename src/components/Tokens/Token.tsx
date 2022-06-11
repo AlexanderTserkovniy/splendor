@@ -19,10 +19,23 @@ const nameToColor: { [key: string]: TokenColors; } = {
   ruby: TokenColors.ruby,
 };
 
-const Token = ({ name, amount } : { name: string; amount: number; }) => {
+// isAllowedToPick – when user run out of actions from taking the tokens
+// e.g.:
+// * took 2 of the same type
+// * took different 3 tokens
+// or user did another action in this turn, so that this action is disabled
+const Token = ({ name, amount, isAllowedToPick = true } : { name: string; amount: number; isAllowedToPick?: boolean; }) => {
   const color: TokenColors = nameToColor[name];
   return (
-    <article className={cs(styles[`color-${color}`])} onClick={() => {alert(`Implement me! ${name} ${amount}`)}}>
+    <article
+      className={cs(
+        styles.Token,
+        styles[`color-${color}`],
+
+        isAllowedToPick === false && styles.disabled
+      )}
+      onClick={() => {alert(`Implement me! ${name} ${amount}`)}}
+    >
       <header>
         <h2>Token: {name}</h2>
         <p>Current amount: {amount}</p>
