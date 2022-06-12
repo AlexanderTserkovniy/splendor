@@ -1,5 +1,6 @@
 import {ResourcesType} from "../../services/startingGameResources.service";
 import Tokens from "../Tokens/Tokens";
+import Nobles from "../Nobles/Nobles";
 
 const Game = ({ startingGameResources }: { startingGameResources: ResourcesType; }) => {
   return (
@@ -8,6 +9,7 @@ const Game = ({ startingGameResources }: { startingGameResources: ResourcesType;
         Resources: {JSON.stringify(startingGameResources)}
       </h1>
       <Tokens tokens={startingGameResources?.tokens} />
+      <Nobles />
     </>
   )
 };
