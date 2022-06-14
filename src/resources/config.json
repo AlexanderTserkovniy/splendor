@@ -1,11 +1,11 @@
 {
   "prestigePointsToWin": 15,
   "tokenNames": {
-    "GREEN": "Emerald",
-    "WHITE": "Diamond",
-    "BLUE": "Sapphire",
-    "BLACK": "Onyx",
-    "RED": "Ruby",
-    "YELLOW": "Gold Joker"
+    "yellow": "goldJoker",
+    "green": "emerald",
+    "white": "diamond",
+    "blue": "sapphire",
+    "black": "onyx",
+    "red": "ruby"
   }
 }

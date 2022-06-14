@@ -6,7 +6,7 @@ enum TokenColors {
   emerald = 'green',
   diamond = 'white',
   sapphire = 'blue',
-  onyx = 'brown',
+  onyx = 'black',
   ruby = 'red',
 }
 

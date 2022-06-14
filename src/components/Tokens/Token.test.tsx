@@ -28,7 +28,7 @@ test('applies color according to the name', () => {
   expect(container.querySelector('article:nth-child(2)')).toHaveClass(styles['color-green']);
   expect(container.querySelector('article:nth-child(3)')).toHaveClass(styles['color-white']);
   expect(container.querySelector('article:nth-child(4)')).toHaveClass(styles['color-blue']);
-  expect(container.querySelector('article:nth-child(5)')).toHaveClass(styles['color-brown']);
+  expect(container.querySelector('article:nth-child(5)')).toHaveClass(styles['color-black']);
   expect(container.querySelector('article:nth-child(6)')).toHaveClass(styles['color-red']);
 });
 
