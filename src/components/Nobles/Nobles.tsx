@@ -1,3 +1,5 @@
+import { nobles } from '../../resources/cards.json';
+
 const Nobles = ({ ...props } : { props?: any }) => (
   <section>
     <header>
@@ -5,7 +7,7 @@ const Nobles = ({ ...props } : { props?: any }) => (
     </header>
 
     <article>
-
+      {JSON.stringify(nobles)}
     </article>
   </section>
 )
